@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.get-dash-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .get-dash-image {
+    flex: 1.5;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+  
+  .get-dash-content {
+    flex: 2;
+    padding: 20px;
+    background: linear-gradient(135deg, #282727, #080707);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    height: 300px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+  
+  .get-dash-container.visible .get-dash-image {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .get-dash-container.visible .get-dash-content {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .typewriter {
+    overflow: hidden; /* Ensures the text is not shown outside the box */
+    border-right: 0.15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: 0.15em; /* Adjust as needed to space out characters */
+    animation: typing 3.5s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(252, 165, 4); }
+  }
+  .get-dash-content h2 {
+    margin-bottom: 20px;
+  }
+   
+  .get-dash-content p {
+    margin-bottom: 20px;
+  }
+  
+  .get-dash-content:hover {
+    transform: translateY(-5px);
+  }
+  
+  .get-dash-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .get-dash-button:hover {
+    background-color: #e1f624;
+  }
+  
+  .get-dash-image img {
+    width: 100%;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .get-dash-content {
+      max-width: none;
+      width: 40%;
+      font-size: 60%;
+      overflow: scroll;
+      margin: 0 auto;
+      height: 80%;
+    }
+    .get-dash-button{
+      width: auto;
+    }
+    .get-dash-content h2{
+      overflow-y: scroll;
+    }
+  }
+  
+  

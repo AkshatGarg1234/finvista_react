@@ -1,0 +1,175 @@
+/* Import Roboto font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Apply Roboto font to elements */
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: #121212;
+    color: #FFFFFF; 
+}
+
+.hello {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    font-size: 20px;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFF; 
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 10vh;
+    background-color: #212121; 
+}
+
+
+.navMenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 18px;
+}
+
+.toggle {
+    width: 3rem;
+    height: 0.2rem;
+    margin: 0.4rem;
+    background-color: #14B8A6; 
+    cursor: pointer;
+    display: none;
+    transition: 0.4s ease-in;
+}
+
+@media screen and (max-width: 768px) {
+    .toggle {
+        display: block;
+    }
+
+    .navMenu {
+        position: fixed;
+        top: 7vh;
+        right: 0;
+        width: 50%;
+        height: 93vh;
+        background-color: #212121;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: 0.5s ease-in;
+    }
+}
+
+.nav_active {
+    transform: translateX(0);
+}
+
+
+.toggle .line1,
+.toggle .line3 {
+    width: 100%;
+    height: 0.2rem;
+    background-color: #FFFFFF; /* White */
+    transition: transform 0.3s ease-in-out;
+}
+
+.toggle .line2 {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.toggle.active .line1 {
+    transform: rotate(-45deg) translate(-3px, 6px);
+}
+
+.toggle.active .line3 {
+    transform: rotate(45deg) translate(-3px, -6px);
+}
+
+.navItem:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.butto {
+    background-color: #333;
+    color: #FFFFFF; 
+    height: 33px;
+    width: 64px;
+    border-radius: 8px;
+    border: 2px solid #14B8A6; 
+}
+
+.butto:hover {
+    text-decoration: none;
+    background-color: #14B8A6; 
+    border: 2px solid #14B8A6; 
+}
+
+@media screen and (max-width: 768px) {
+    .navMenu {
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        right: -100%;
+        background-color: #212121; 
+        transition: right 0.5s ease-in-out;
+    }
+    .navMenu.active {
+        right: 0;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .navMenu {
+        gap: 12px;
+    }
+    
+    .toggle {
+        margin: 0.3rem;
+    }
+    
+    .toggle .line1,
+    .toggle .line3 {
+        height: 0.15rem;
+    }
+    
+    .toggle.active .line1 {
+        transform: rotate(-45deg) translate(-2px, 5px);
+    }
+    
+    .toggle.active .line3 {
+        transform: rotate(45deg) translate(-2px, -5px);
+    }
+    
+    .butto {
+        height: 28px;
+        width: 54px;
+        border-width: 1.5px;
+    }
+}
